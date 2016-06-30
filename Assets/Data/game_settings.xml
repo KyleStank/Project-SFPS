@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<game_settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <key_mappings>
+    <activate_key>E</activate_key>
+    <x_axis_key>X</x_axis_key>
+    <y_axis_key>Y</y_axis_key>
+    <z_axis_key>Z</z_axis_key>
+    <primary_mouse_button>0</primary_mouse_button>
+    <secondary_mouse_button>1</secondary_mouse_button>
+  </key_mappings>
+</game_settings>

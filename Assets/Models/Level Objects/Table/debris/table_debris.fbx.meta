@@ -1,0 +1,163 @@
+fileFormatVersion: 2
+guid: 8008368833dbb5d4a8aacfbf1579edb7
+timeCreated: 1465572890
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Leg 1.001
+    100002: Leg 1.001_cell
+    100004: Leg 1.001_cell.001
+    100006: Leg 2.001
+    100008: Leg 2.001_cell
+    100010: Leg 2.001_cell.001
+    100012: Leg 3.001
+    100014: Leg 3.001_cell
+    100016: Leg 3.001_cell.001
+    100018: Leg 4.001
+    100020: Leg 4.001_cell
+    100022: Leg 4.001_cell.001
+    100024: Table.001
+    100026: Table.001_cell
+    100028: Table.001_cell.001
+    100030: //RootNode
+    400000: Leg 1.001
+    400002: Leg 1.001_cell
+    400004: Leg 1.001_cell.001
+    400006: Leg 2.001
+    400008: Leg 2.001_cell
+    400010: Leg 2.001_cell.001
+    400012: Leg 3.001
+    400014: Leg 3.001_cell
+    400016: Leg 3.001_cell.001
+    400018: Leg 4.001
+    400020: Leg 4.001_cell
+    400022: Leg 4.001_cell.001
+    400024: Table.001
+    400026: Table.001_cell
+    400028: Table.001_cell.001
+    400030: //RootNode
+    2300000: Leg 1.001
+    2300002: Leg 1.001_cell
+    2300004: Leg 1.001_cell.001
+    2300006: Leg 2.001
+    2300008: Leg 2.001_cell
+    2300010: Leg 2.001_cell.001
+    2300012: Leg 3.001
+    2300014: Leg 3.001_cell
+    2300016: Leg 3.001_cell.001
+    2300018: Leg 4.001
+    2300020: Leg 4.001_cell
+    2300022: Leg 4.001_cell.001
+    2300024: Table.001
+    2300026: Table.001_cell
+    2300028: Table.001_cell.001
+    3300000: Leg 1.001
+    3300002: Leg 1.001_cell
+    3300004: Leg 1.001_cell.001
+    3300006: Leg 2.001
+    3300008: Leg 2.001_cell
+    3300010: Leg 2.001_cell.001
+    3300012: Leg 3.001
+    3300014: Leg 3.001_cell
+    3300016: Leg 3.001_cell.001
+    3300018: Leg 4.001
+    3300020: Leg 4.001_cell
+    3300022: Leg 4.001_cell.001
+    3300024: Table.001
+    3300026: Table.001_cell
+    3300028: Table.001_cell.001
+    4300000: Leg 4.001_cell.001
+    4300002: Leg 4.001_cell
+    4300004: Leg 3.001_cell.001
+    4300006: Leg 3.001_cell
+    4300008: Leg 2.001_cell.001
+    4300010: Leg 2.001_cell
+    4300012: Leg 1.001_cell.001
+    4300014: Leg 1.001_cell
+    4300016: Table.001_cell.001
+    4300018: Table.001_cell
+    4300020: Table.001
+    4300022: Leg 1.001
+    4300024: Leg 2.001
+    4300026: Leg 3.001
+    4300028: Leg 4.001
+    6400000: Leg 1.001
+    6400002: Leg 1.001_cell
+    6400004: Leg 1.001_cell.001
+    6400006: Leg 2.001
+    6400008: Leg 2.001_cell
+    6400010: Leg 2.001_cell.001
+    6400012: Leg 3.001
+    6400014: Leg 3.001_cell
+    6400016: Leg 3.001_cell.001
+    6400018: Leg 4.001
+    6400020: Leg 4.001_cell
+    6400022: Leg 4.001_cell.001
+    6400024: Table.001
+    6400026: Table.001_cell
+    6400028: Table.001_cell.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1.4
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
