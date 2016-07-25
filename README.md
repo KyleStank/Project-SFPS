@@ -14,4 +14,4 @@ to pay a monthly fee for their mulitplayer services. I hate this just as much as
 Fortunately I am not planning to advertise this game a whole lot. If I'm lucky then that won't be a problem, but if I'm unlucky, and people actually play this game, well then 
 I have a shit storm ahead of me.
 
-Evceryone is encouraged to contribute.
+Everyone is encouraged to contribute.
