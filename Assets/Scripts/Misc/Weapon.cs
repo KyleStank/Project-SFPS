@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public class Weapon : MonoBehaviour {
     public enum FireType {
         SemiAutomatic,
@@ -34,8 +35,8 @@ public class Weapon : MonoBehaviour {
     public float defaultFOV;
     [HideInInspector]
     public float defaultSpread;
-
-    private int defaultAmmoInMag;
+    [HideInInspector]
+    public int defaultAmmoInMag;
 
     private void Awake() {
         audio = GetComponent<AudioSource>();

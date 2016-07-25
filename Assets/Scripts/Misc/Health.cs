@@ -2,12 +2,16 @@
 using UnityEngine.Events;
 using UnityEngine.Networking;
 
+[RequireComponent(typeof(Player))]
+[DisallowMultipleComponent]
 public class Health : NetworkBehaviour {
     //Events
     public UnityEvent OnHealthDamage;
     public UnityEvent OnKilled;
     public UnityEvent OnRespawn;
-    
+
+    private Player player;
+
     [SerializeField]
     [SyncVar]
     private float health = 100.0f;
@@ -20,6 +24,12 @@ public class Health : NetworkBehaviour {
     //Variables that aren't shown in the inspector
     [SyncVar]
     private bool dead = false;
+
+    private void Awake() {
+        player = GetComponent<Player>();
+
+        defaultHealth = health;
+    }
 
     public void SetHealth(float health, bool affectDeadState = false) { //Sets the health of object
         this.health = health;
@@ -52,23 +62,25 @@ public class Health : NetworkBehaviour {
         return dead;
     }
 
-    private void Awake() {
-        defaultHealth = health;
-    }
-
     [ClientRpc]
     public virtual void RpcDamage(float damage) { //Damages the object
         if(!dead) { //If object isn't already dead
             health -= damage;
 
-            if(health <= 0) //If enemy has no more health
+            if(health <= 0) { //If enemy has no more health
                 OnKilled.Invoke(); //Destroy this game object
+            }
         }
     }
         
-    public virtual void Kill() { //"Kills"/destroys the object
-        if(!dead) { //Makes sure object isn't already dead/destroyed
+    public virtual void Kill(Player p) { //"Kills"/destroys the object
+        if(!dead && p) { //Makes sure object isn't already dead/destroyed
+            //Add a death to this player
             dead = true;
+            player.deaths++;
+
+            //Add a kill to the player that killed this player
+            p.kills++;
 
             /* Play death animation */
 

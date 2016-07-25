@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+[DisallowMultipleComponent]
 public sealed class DestroyOnCollide : MonoBehaviour {
     public string[] safeTags;
     public float destroyDelay = 0.0f;

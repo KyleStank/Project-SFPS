@@ -1,11 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
-using System.Collections.Generic;
 
 [RequireComponent(typeof(Player))]
 [DisallowMultipleComponent]
 public sealed class PlayerWeapon : NetworkBehaviour {
-    private Weapon weapon;
+    public Weapon weapon;
     private Player player;
 
     private void Awake() {
@@ -14,8 +13,12 @@ public sealed class PlayerWeapon : NetworkBehaviour {
     }
 
     private void Update() {
-        print("Ammo in Mag: " + weapon.bulletsInMag + " Magazines: " + weapon.magazines);
-        
+        if(!GameManager.Instance.isGamePaused && !player.health.IsDead()) { //If game isn't paused
+            HandleWeapon();
+        }
+    }
+
+    private void HandleWeapon() { //Handles the player's weapon
         //If weapon is semi automatic
         if(weapon.fireType == Weapon.FireType.SemiAutomatic && weapon.bulletsInMag > 0) { //Semi automatic
             if(Input.GetMouseButtonDown(GameManager.Instance.settings.keys.primaryMouseClick) && Time.time > weapon.nextFire)
@@ -88,10 +91,15 @@ public sealed class PlayerWeapon : NetworkBehaviour {
 
     [Command]
     private void CmdDamagePlayer(string playerID, float damage) { //Does damage to the player
-        Player player = PlayerManager.Instance.management.GetPlayer(playerID); //Find the player
+        Player p = PlayerManager.Instance.management.GetPlayer(playerID); //Find the player
 
-        if(player.health) //If player has health
-            EventManager.RemoveAllAndAddListener(player.health.OnHealthDamage, () => player.health.RpcDamage(damage), true); //Damage the player
+        if(p.health) { //If player has health
+            //Damage the player
+            EventManager.RemoveAllAndAddListener(p.health.OnHealthDamage, () => p.health.RpcDamage(damage), true);
+
+            //This player kills the hit player if enough health was taken
+            EventManager.RemoveAllAndAddListener(p.health.OnKilled, () => p.health.Kill(player), false);
+        }
     }
 
     [Command]
@@ -117,29 +125,3 @@ public sealed class PlayerWeapon : NetworkBehaviour {
         Destroy(bullet.gameObject, 5.0f); //Destroy after X amount of seconds
     }
 }
-
-#region Destructible Environment Handling
-                    /*
-                    //If a destructible was hit
-                    if(hit.transform.tag == GameManager.Instance.settings.tags.destructible || hit.transform.tag == GameManager.Instance.settings.tags.safeRigidbody) {
-                        Add force to object
-                        Rigidbody rb = hit.transform.GetComponent<Rigidbody>();
-
-                        if(rb) //If rigidbody component is attached to the object that was hit
-                            rb.AddForce(weapon.transform.forward, ForceMode.Impulse);
-
-                        Damage the object
-                        Misc.Destructible destructible = hit.transform.GetComponent<Misc.Destructible>();
-                        FracturedChunk fChunk = hit.transform.GetComponent<FracturedChunk>();
-
-                        if(destructible) { //If Destructible component is attached to the object that was hit
-                            destructible.RpcDamage(weapon.damage);
-                        }
-
-                        if(fChunk) { //If FractuedChunk component is attached to the hit object
-                            if(!fChunk.IsDetachedChunk) //Makes sure the chunk isn't on the ground
-                                fChunk.Impact(hit.point, 10.0f, 1.0f, true); //Impact the hit point
-                        }
-                    }
-                    */
-#endregion
