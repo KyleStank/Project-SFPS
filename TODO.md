@@ -8,3 +8,4 @@
 - [ ] Hopefully add basic host migration
 - [ ] Fix some weird bugs
 - [X] Be careful to not add bugs with careless mistakes
+- [ ] Implement dedicated (third-party) server functionality
