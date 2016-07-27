@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Player Boundary
+  - Obtainable
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Ignore Reflection
   - Gun
   - Player
-  - 
+  - IgnoreLightBake
   - 
   - 
   - 

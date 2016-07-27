@@ -1,0 +1,36 @@
+Mono path[0] = 'C:/Users/gamem/OneDrive/Documents/Unity Projects/In-Development Projects/Project-SFPS/Builds/Build03/Build03_Data/Managed'
+Mono path[1] = 'C:/Users/gamem/OneDrive/Documents/Unity Projects/In-Development Projects/Project-SFPS/Builds/Build03/Build03_Data/Mono'
+Mono config path = 'C:/Users/gamem/OneDrive/Documents/Unity Projects/In-Development Projects/Project-SFPS/Builds/Build03/Build03_Data/Mono/etc'
+PlayerConnection initialized from C:/Users/gamem/OneDrive/Documents/Unity Projects/In-Development Projects/Project-SFPS/Builds/Build03/Build03_Data (debug = 0)
+PlayerConnection initialized network socket : 0.0.0.0 55402
+Multi-casting "[IP] 192.168.1.240 [Port] 55402 [Flags] 2 [Guid] 1487222801 [EditorId] 754876232 [Version] 1048832 [Id] WindowsPlayer(Kyle-Desktop) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.1.240:55402]
+Initialize engine version: 5.4.0b25 (4aae2318024c)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 970 (ID=0x13c2)
+    Vendor:   NVIDIA
+    VRAM:     4007 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.089 seconds
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 3520x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.846818 ms
+Platform assembly: C:\Users\gamem\OneDrive\Documents\Unity Projects\In-Development Projects\Project-SFPS\Builds\Build03\Build03_Data\Managed\System.Xml.dll (this message is harmless)
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 2c30 -> priority: 1 
