@@ -6,7 +6,9 @@ namespace ProjectSFPS.Character
 {
     public class CharacterControl : SFPSBehaviour, ICharacterControl
     {
+        [SerializeField]
         private string _horizontalAxis = "Horizontal";
+        [SerializeField]
         private string _verticalAxis = "Vertical";
 
         private float _rawHorizontalInput = 0.0f;
