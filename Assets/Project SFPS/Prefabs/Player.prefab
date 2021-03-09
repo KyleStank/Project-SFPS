@@ -222,6 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loggingEnabled: 1
+  _showBaseProps: 0
+  _showDerivedProps: 0
 --- !u!114 &7680364943730268198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +237,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loggingEnabled: 1
+  _showBaseProps: 0
+  _showDerivedProps: 0
+  _horizontalAxis: Horizontal
+  _verticalAxis: Vertical
 --- !u!114 &8957527352550778840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,4 +254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loggingEnabled: 1
+  _showBaseProps: 0
+  _showDerivedProps: 0
   _speed: 10

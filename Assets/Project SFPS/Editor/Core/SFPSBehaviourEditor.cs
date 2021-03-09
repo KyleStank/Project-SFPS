@@ -98,7 +98,6 @@ namespace ProjectSFPS.Editor.Core
                 EditorGUI.indentLevel++;
 
                 // Logging property.
-                EditorGUILayout.TextField("Logging", EditorStyles.boldLabel);
                 EditorGUILayout.PropertyField(_propLoggingEnabled);
 
                 EditorGUI.indentLevel--;
@@ -126,7 +125,6 @@ namespace ProjectSFPS.Editor.Core
             {
                 EditorGUI.indentLevel++;
 
-                EditorGUILayout.TextField("Properties", EditorStyles.boldLabel);
                 DrawPropertiesExcluding(serializedObject, _excludedDefaultProperties);
 
                 EditorGUI.indentLevel--;
