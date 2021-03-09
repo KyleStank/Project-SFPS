@@ -7,6 +7,13 @@ namespace ProjectSFPS.Core
         [SerializeField]
         private bool _loggingEnabled = true;
 
+#if UNITY_EDITOR
+        [SerializeField]
+        private bool _showBaseProps = false;
+        [SerializeField]
+        private bool _showDerivedProps = false;
+#endif
+
         public bool LoggingEnabled
         {
             get { return _loggingEnabled; }

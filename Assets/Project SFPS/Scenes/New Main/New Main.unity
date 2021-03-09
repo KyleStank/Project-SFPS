@@ -281,6 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24cf93fe035dc64eabe01f233146dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showBaseProps: 0
+  _showDerivedProps: 0
   _loggingEnabled: 1
   _character: {fileID: 0}
   _characterTag: Player
@@ -3058,6 +3060,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 506310503, guid: 1952abc1557af4b44bc45626c631c10b, type: 3}
+      propertyPath: _loggingEnabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6384343835097644696, guid: 1952abc1557af4b44bc45626c631c10b,
         type: 3}
       propertyPath: m_RootOrder
@@ -3117,6 +3123,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7680364943730268198, guid: 1952abc1557af4b44bc45626c631c10b,
+        type: 3}
+      propertyPath: _loggingEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8957527352550778840, guid: 1952abc1557af4b44bc45626c631c10b,
+        type: 3}
+      propertyPath: _loggingEnabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1952abc1557af4b44bc45626c631c10b, type: 3}
