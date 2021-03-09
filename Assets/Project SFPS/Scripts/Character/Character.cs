@@ -20,7 +20,7 @@ namespace ProjectSFPS.Character
 
         private void Update()
         {
-            
+
         }
     }
 }
