@@ -5,7 +5,7 @@ using ProjectSFPS.Core;
 namespace ProjectSFPS.Character
 {
     [RequireComponent(typeof(Camera))]
-    public class CharacterCamera : LoggingBehaviour
+    public class CharacterCamera : SFPSBehaviour
     {
         [SerializeField]
         private Character _character = null;

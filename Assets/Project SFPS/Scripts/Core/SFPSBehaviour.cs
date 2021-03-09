@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace ProjectSFPS.Core
 {
-    public abstract class LoggingBehaviour : MonoBehaviour
+    public abstract class SFPSBehaviour : MonoBehaviour
     {
         [Header("Logging")]
         [SerializeField]

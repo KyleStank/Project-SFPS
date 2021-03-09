@@ -4,7 +4,7 @@ using ProjectSFPS.Core;
 
 namespace ProjectSFPS.Character
 {
-    public class Character : LoggingBehaviour
+    public class Character : SFPSBehaviour
     {
         private CharacterControl _characterControl = null;
         private CharacterMotor _characterMotor = null;

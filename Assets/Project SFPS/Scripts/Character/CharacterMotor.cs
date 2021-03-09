@@ -5,7 +5,7 @@ using ProjectSFPS.Core;
 namespace ProjectSFPS.Character
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class CharacterMotor : LoggingBehaviour, ICharacterMotor
+    public class CharacterMotor : SFPSBehaviour, ICharacterMotor
     {
         [SerializeField]
         private float _speed = 10.0f;
