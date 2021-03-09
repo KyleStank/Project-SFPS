@@ -34,6 +34,8 @@ namespace ProjectSFPS.Editor.Core
         private AnimBool _basePropsAnim;
         private AnimBool _derivedPropsAnim;
 
+        private string _typeName = "Component";
+
         private void OnEnable()
         {
             // Grab serialized properties.
@@ -49,6 +51,8 @@ namespace ProjectSFPS.Editor.Core
             // Setup animation values.
             _basePropsAnim = new AnimBool(_propShowBaseProps.isExpanded, Repaint);
             _derivedPropsAnim = new AnimBool(_propShowDerivedProps.isExpanded, Repaint);
+
+            _typeName = target.GetType().Name;
         }
 
         private void OnDisable()
@@ -115,7 +119,7 @@ namespace ProjectSFPS.Editor.Core
             // Create foldout.
             _propShowDerivedProps.isExpanded = EditorGUILayout.BeginFoldoutHeaderGroup(
                 _propShowDerivedProps.isExpanded,
-                target.name + " Settings",
+                _typeName + " Settings",
                 EditorStyles.foldoutHeader
             );
             _derivedPropsAnim.target = _propShowDerivedProps.isExpanded;
