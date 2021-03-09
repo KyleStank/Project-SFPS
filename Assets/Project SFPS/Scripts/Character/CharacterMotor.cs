@@ -1,9 +1,11 @@
 using UnityEngine;
 
+using ProjectSFPS.Core;
+
 namespace ProjectSFPS.Character
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class CharacterMotor : MonoBehaviour
+    public class CharacterMotor : LoggingBehaviour, ICharacterMotor
     {
         [SerializeField]
         private float _speed = 10.0f;
@@ -12,7 +14,7 @@ namespace ProjectSFPS.Character
 
         private void Awake()
         {
-            Debug.Log("Initialize Character Motor.");
+            Log("Initialize Character Motor.");
 
             // Get references.
             _rigidbody = GetComponent<Rigidbody>();

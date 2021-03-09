@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f24cf93fe035dc64eabe01f233146dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loggingEnabled: 1
   _character: {fileID: 0}
   _characterTag: Player
 --- !u!1 &92381629

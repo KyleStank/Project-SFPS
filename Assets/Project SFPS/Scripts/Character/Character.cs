@@ -1,15 +1,17 @@
 using UnityEngine;
 
+using ProjectSFPS.Core;
+
 namespace ProjectSFPS.Character
 {
-    public class Character : MonoBehaviour
+    public class Character : LoggingBehaviour
     {
         private CharacterControl _characterControl = null;
         private CharacterMotor _characterMotor = null;
 
         private void Awake()
         {
-            Debug.Log("Initialize Character.");
+            Log("Initialize Character.");
 
             // Get references.
             _characterControl = GetComponent<CharacterControl>();

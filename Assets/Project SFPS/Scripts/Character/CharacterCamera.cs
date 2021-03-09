@@ -1,9 +1,11 @@
 using UnityEngine;
 
+using ProjectSFPS.Core;
+
 namespace ProjectSFPS.Character
 {
     [RequireComponent(typeof(Camera))]
-    public class CharacterCamera : MonoBehaviour
+    public class CharacterCamera : LoggingBehaviour
     {
         [SerializeField]
         private Character _character = null;
@@ -14,7 +16,7 @@ namespace ProjectSFPS.Character
 
         private void Awake()
         {
-            Debug.Log("Initialize Character Camera.");
+            Log("Initialize Character Camera.");
 
             // Get references.
             _camera = GetComponent<Camera>();
