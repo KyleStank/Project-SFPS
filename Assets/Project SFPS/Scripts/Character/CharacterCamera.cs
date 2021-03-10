@@ -7,12 +7,27 @@ namespace ProjectSFPS.Character
     [RequireComponent(typeof(Camera))]
     public class CharacterCamera : SFPSBehaviour
     {
+        [Header("References")]
         [SerializeField]
-        private Character _character = null;
+        private Transform _target = null;
         [SerializeField]
-        private string _characterTag = "Player";
+        private string _targetTag = "Player";
+
+        [Header("Camera Settings")]
+        [SerializeField]
+        private Vector3 _offset = Vector3.zero;
+        [SerializeField]
+        private Vector2 _sensitivity = new Vector2(5.0f, 5.0f);
+
+        [SerializeField]
+        private float _topClamp = -65.0f;
+        [SerializeField]
+        private float _bottomClamp = 65.0f;
 
         private Camera _camera = null;
+
+        private Quaternion _originalRotation = Quaternion.identity;
+        private Quaternion _rotation = Quaternion.identity;
 
         private void Awake()
         {
@@ -21,22 +36,49 @@ namespace ProjectSFPS.Character
             // Get references.
             _camera = GetComponent<Camera>();
 
-            if (_character == null)
+            if (_target == null)
             {
-                GameObject go = GameObject.FindGameObjectWithTag(_characterTag);
+                GameObject go = GameObject.FindGameObjectWithTag(_targetTag);
                 if (go != null)
                 {
-                    _character = go.GetComponent<Character>();
-                    if (_character == null)
+                    _target = go.GetComponent<Transform>();
+                    if (_target == null)
                     {
-                        Debug.LogError("Could not find component [Character] on GameObject [" + go.name + "].");
+                        LogError("Could not find component [Character] on GameObject [" + go.name + "].");
                     }
                 }
                 else
                 {
-                    Debug.LogError("Could not find GameObject with tag [" + _characterTag + "].");
+                    LogError("Could not find GameObject with tag [" + _targetTag + "].");
                 }
             }
+
+            _originalRotation = transform.rotation;
+        }
+
+        private void Update()
+        {
+            // Calculate rotation.
+            Vector3 rot = transform.rotation.eulerAngles;
+            float xRot = rot.x - SFPSInputManager.Instance.SFPSInput.MouseY * _sensitivity.y;
+            float yRot = rot.y + SFPSInputManager.Instance.SFPSInput.MouseX * _sensitivity.x;
+
+            rot = new Vector3(
+                Mathf.Clamp(
+                     xRot > 180.0f ? xRot - 360 : xRot,
+                     _topClamp,
+                     _bottomClamp
+                 ),
+                yRot,
+                _originalRotation.z
+            );
+            _rotation = Quaternion.Euler(rot);
+        }
+
+        private void LateUpdate()
+        {
+            transform.position = _target.position + _target.TransformDirection(_offset);
+            transform.rotation = _rotation;
         }
     }
 }

@@ -6,6 +6,11 @@ namespace ProjectSFPS.Core
     {
         [SerializeField]
         private bool _loggingEnabled = true;
+        public bool LoggingEnabled
+        {
+            get { return _loggingEnabled; }
+            set { _loggingEnabled = value; }
+        }
 
 #if UNITY_EDITOR
         [SerializeField]
@@ -13,12 +18,6 @@ namespace ProjectSFPS.Core
         [SerializeField]
         private bool _showDerivedProps = false;
 #endif
-
-        public bool LoggingEnabled
-        {
-            get { return _loggingEnabled; }
-            set { _loggingEnabled = value; }
-        }
 
         public void Log(object message, Object context = null)
         {

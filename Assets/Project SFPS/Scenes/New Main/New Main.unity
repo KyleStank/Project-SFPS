@@ -211,8 +211,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75111658}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.15924, y: 5.71, z: 56.8987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41.788, y: 5.52, z: 57.100002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -284,8 +284,12 @@ MonoBehaviour:
   _loggingEnabled: 1
   _showBaseProps: 0
   _showDerivedProps: 0
-  _character: {fileID: 0}
-  _characterTag: Player
+  _target: {fileID: 618386688}
+  _targetTag: Player
+  _offset: {x: 0, y: 0.5, z: 0.4}
+  _sensitivity: {x: 5, y: 5}
+  _topClamp: -55
+  _bottomClamp: 55
 --- !u!1 &92381629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,6 +1127,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 35437d02c25837648b2624f7b5517bba,
     type: 3}
   m_PrefabInstance: {fileID: 604590927}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &618386688 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6384343835097644696, guid: 1952abc1557af4b44bc45626c631c10b,
+    type: 3}
+  m_PrefabInstance: {fileID: 6384343835129844223}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &666204031
 PrefabInstance:
@@ -3068,17 +3078,17 @@ PrefabInstance:
     - target: {fileID: 6384343835097644696, guid: 1952abc1557af4b44bc45626c631c10b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.15924
+      value: 41.788
       objectReference: {fileID: 0}
     - target: {fileID: 6384343835097644696, guid: 1952abc1557af4b44bc45626c631c10b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.016
+      value: 5.02
       objectReference: {fileID: 0}
     - target: {fileID: 6384343835097644696, guid: 1952abc1557af4b44bc45626c631c10b,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 56.638702
+      value: 56.7
       objectReference: {fileID: 0}
     - target: {fileID: 6384343835097644696, guid: 1952abc1557af4b44bc45626c631c10b,
         type: 3}
