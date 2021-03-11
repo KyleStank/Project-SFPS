@@ -167,9 +167,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6384343835097644696}
   - component: {fileID: 3544393312556234890}
-  - component: {fileID: 8957527352550778840}
+  - component: {fileID: 8986156219693981428}
+  - component: {fileID: 1032906307945037068}
+  - component: {fileID: 8412452742463804680}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Character
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +209,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &8957527352550778840
+--- !u!114 &8986156219693981428
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,11 +218,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 6384343835097644697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc4a02da0ec344b40bb64c2bbaa1a268, type: 3}
+  m_Script: {fileID: 11500000, guid: 705cb7881bec0dc488d553bc98edcaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loggingEnabled: 1
-  _showBaseProps: 0
-  _showDerivedProps: 0
+  m_LoggingEnabled: 1
+  m_ShowBaseProps: 0
+  m_ShowDerivedProps: 0
+  m_InputActions: {fileID: -944628639613478452, guid: 2b34e466914d40940931bc50c07ff869,
+    type: 3}
+--- !u!114 &1032906307945037068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384343835097644697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 718540d7af559c24d8a2a2007a92618c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LoggingEnabled: 1
+  m_ShowBaseProps: 0
+  m_ShowDerivedProps: 0
+--- !u!114 &8412452742463804680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6384343835097644697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8439a325b49a19a44884501ba93e84d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LoggingEnabled: 1
+  m_ShowBaseProps: 0
+  m_ShowDerivedProps: 0
   _accelerationRate: 10
-  _rotationRate: 5

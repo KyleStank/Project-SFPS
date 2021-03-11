@@ -1,6 +1,6 @@
 namespace ProjectSFPS.Core
 {
-    public struct SFPSInput
+    public struct SFPSInputData
     {
         public float Horizontal { get; set; }
         public float Vertical { get; set; }

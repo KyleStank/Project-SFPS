@@ -9,9 +9,9 @@ namespace ProjectSFPS.Editor.Core
     public class SFPSBehaviourEditor : UnityEditor.Editor
     {
         private const string PROPNAME_SCRIPT = "m_Script";
-        private const string PROPNAME_LOGGINGENABLED = "_loggingEnabled";
-        private const string PROPNAME_SHOWBASEPROPS = "_showBaseProps";
-        private const string PROPNAME_SHOWDERIVEDPROPS = "_showDerivedProps";
+        private const string PROPNAME_LOGGINGENABLED = "m_LoggingEnabled";
+        private const string PROPNAME_SHOWBASEPROPS = "m_ShowBaseProps";
+        private const string PROPNAME_SHOWDERIVEDPROPS = "m_ShowDerivedProps";
 
         private readonly string[] _excludedDefaultProperties = new string[]
         {
@@ -33,7 +33,7 @@ namespace ProjectSFPS.Editor.Core
 
         private string _typeName = "Component";
 
-        private void OnEnable()
+        private void Awake()
         {
             // Grab serialized properties.
             _propScript = serializedObject.FindProperty(PROPNAME_SCRIPT);
@@ -52,7 +52,7 @@ namespace ProjectSFPS.Editor.Core
             _typeName = target.GetType().Name;
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             // Clean up event listeners.
             _basePropsAnim.valueChanged.RemoveAllListeners();

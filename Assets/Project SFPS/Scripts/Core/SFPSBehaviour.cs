@@ -5,39 +5,44 @@ namespace ProjectSFPS.Core
     public abstract class SFPSBehaviour : MonoBehaviour
     {
         [SerializeField]
-        private bool _loggingEnabled = true;
+        private bool m_LoggingEnabled = true;
         public bool LoggingEnabled
         {
-            get { return _loggingEnabled; }
-            set { _loggingEnabled = value; }
+            get { return m_LoggingEnabled; }
+            set { m_LoggingEnabled = value; }
         }
 
 #if UNITY_EDITOR
         [SerializeField]
-        private bool _showBaseProps = false;
+        private bool m_ShowBaseProps = false;
         [SerializeField]
-        private bool _showDerivedProps = false;
+        private bool m_ShowDerivedProps = false;
 #endif
+
+        private string FormatLogMessage(object message)
+        {
+            return "[SFPS]: " + message;
+        }
 
         public void Log(object message, Object context = null)
         {
-            if (!_loggingEnabled) return;
+            if (!m_LoggingEnabled) return;
 
-            Debug.Log(message, context == null ? gameObject : context);
+            Debug.Log(FormatLogMessage(message), context == null ? gameObject : context);
         }
 
         public void LogWarning(object message, Object context = null)
         {
-            if (!_loggingEnabled) return;
+            if (!m_LoggingEnabled) return;
 
-            Debug.LogWarning(message, context == null ? gameObject : context);
+            Debug.LogWarning(FormatLogMessage(message), context == null ? gameObject : context);
         }
 
         public void LogError(object message, Object context = null)
         {
-            if (!_loggingEnabled) return;
+            if (!m_LoggingEnabled) return;
 
-            Debug.LogError(message, context == null ? gameObject : context);
+            Debug.LogError(FormatLogMessage(message), context == null ? gameObject : context);
         }
     }
 }

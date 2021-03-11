@@ -6,49 +6,49 @@ namespace ProjectSFPS.Core
     {
         [Header("Keyboard")]
         [SerializeField]
-        private string _horizontalAxis = "Horizontal";
+        private string m_HorizontalAxis = "Horizontal";
         [SerializeField]
-        private string _verticalAxis = "Vertical";
+        private string m_VerticalAxis = "Vertical";
         [SerializeField]
-        private string _jumpButton = "Jump";
+        private string m_JumpButton = "Jump";
 
         [Header("Mouse")]
         [SerializeField]
-        private string _mouseXAxis = "Mouse X";
+        private string m_MouseXAxis = "Mouse X";
         [SerializeField]
-        private string _mouseYAxis = "Mouse Y";
+        private string m_MouseYAxis = "Mouse Y";
 
-        private static SFPSInputManager _instance = null;
+        private static SFPSInputManager s_Instance = null;
         public static SFPSInputManager Instance
         {
             get
             {
-                if (_instance == null)
+                if (s_Instance == null)
                 {
                     GameObject go = new GameObject("SFPSInputManager (Singleton)");
-                    _instance = go.AddComponent<SFPSInputManager>();
+                    s_Instance = go.AddComponent<SFPSInputManager>();
                 }
 
-                return _instance;
+                return s_Instance;
             }
         }
 
-        private SFPSInput _sfpsInput = default;
-        public SFPSInput SFPSInput
+        private SFPSInputData _sfpsInput = default;
+        public SFPSInputData SFPSInput
         {
             get { return _sfpsInput; }
         }
 
         private void Awake()
         {
-            Log("Initialize SFPSInputManager.");
+            Log("Initialize SFPSInputManager");
 
             // Make sure only one instance ever exists.
-            if (_instance == null)
+            if (s_Instance == null)
             {
-                _instance = this;
+                s_Instance = this;
             }
-            else if (_instance != this)
+            else if (s_Instance != this)
             {
                 Destroy(gameObject);
             }
@@ -65,8 +65,8 @@ namespace ProjectSFPS.Core
         /// </summary>
         public void ReadKeyboardAxisInput()
         {
-            _sfpsInput.Horizontal = Input.GetAxisRaw(_horizontalAxis);
-            _sfpsInput.Vertical = Input.GetAxisRaw(_verticalAxis);
+            _sfpsInput.Horizontal = Input.GetAxisRaw(m_HorizontalAxis);
+            _sfpsInput.Vertical = Input.GetAxisRaw(m_VerticalAxis);
         }
 
         /// <summary>
@@ -74,8 +74,8 @@ namespace ProjectSFPS.Core
         /// </summary>
         public void ReadMouseAxisInput()
         {
-            _sfpsInput.MouseX = Input.GetAxisRaw(_mouseXAxis);
-            _sfpsInput.MouseY = Input.GetAxisRaw(_mouseYAxis);
+            _sfpsInput.MouseX = Input.GetAxisRaw(m_MouseXAxis);
+            _sfpsInput.MouseY = Input.GetAxisRaw(m_MouseYAxis);
         }
     }
 }
