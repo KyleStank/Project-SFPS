@@ -47,19 +47,18 @@ namespace ProjectSFPS.Camera
             transform.position = m_Target.position + m_Target.TransformDirection(m_Offset);
         }
 
-        public void Rotate()
+        public void Rotate(float horizontal, float vertical)
         {
             Quaternion rot = transform.rotation;
 
             // Detect input.
-            SFPSInputData sfpsInput = SFPSInputManager.Instance.SFPSInput;
-            if (sfpsInput.MouseX != 0 || sfpsInput.MouseY != 0)
+            if (horizontal != 0 || vertical != 0)
             {
                 Vector3 eulerAngles = rot.eulerAngles;
 
                 // Calculate rotation.
-                float xRot = eulerAngles.x - SFPSInputManager.Instance.SFPSInput.MouseY * m_Sensitivity.y;
-                float yRot = eulerAngles.y + SFPSInputManager.Instance.SFPSInput.MouseX * m_Sensitivity.x;
+                float xRot = eulerAngles.x - vertical * m_Sensitivity.y;
+                float yRot = eulerAngles.y + horizontal * m_Sensitivity.x;
                 rot = Quaternion.Euler(
                     new Vector3(
                         Mathf.Clamp(

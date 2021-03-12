@@ -50,6 +50,7 @@ MonoBehaviour:
   m_ShowDerivedProps: 0
   m_InputActions: {fileID: -944628639613478452, guid: 2b34e466914d40940931bc50c07ff869,
     type: 3}
+  m_DefaultActionMap: Player
 --- !u!114 &3676728460350411891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,6 +70,7 @@ MonoBehaviour:
   m_CameraTag: MainCamera
   m_CharacterTarget: {fileID: 0}
   m_CharacterTag: Player
+  m_LookAction: Look
 --- !u!1 &3931504956564986980
 GameObject:
   m_ObjectHideFlags: 0

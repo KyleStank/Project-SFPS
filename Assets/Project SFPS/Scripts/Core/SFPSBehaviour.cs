@@ -12,12 +12,12 @@ namespace ProjectSFPS.Core
             set { m_LoggingEnabled = value; }
         }
 
-#if UNITY_EDITOR
+        #if UNITY_EDITOR
         [SerializeField]
         private bool m_ShowBaseProps = false;
         [SerializeField]
         private bool m_ShowDerivedProps = false;
-#endif
+        #endif
 
         private string FormatLogMessage(object message)
         {
@@ -28,21 +28,21 @@ namespace ProjectSFPS.Core
         {
             if (!m_LoggingEnabled) return;
 
-            Debug.Log(FormatLogMessage(message), context == null ? gameObject : context);
+            Debug.Log(FormatLogMessage(message), context == null ? this : context);
         }
 
         public void LogWarning(object message, Object context = null)
         {
             if (!m_LoggingEnabled) return;
 
-            Debug.LogWarning(FormatLogMessage(message), context == null ? gameObject : context);
+            Debug.LogWarning(FormatLogMessage(message), context == null ? this : context);
         }
 
         public void LogError(object message, Object context = null)
         {
             if (!m_LoggingEnabled) return;
 
-            Debug.LogError(FormatLogMessage(message), context == null ? gameObject : context);
+            Debug.LogError(FormatLogMessage(message), context == null ? this : context);
         }
     }
 }
