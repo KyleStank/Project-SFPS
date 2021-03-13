@@ -22,20 +22,6 @@ namespace ProjectSFPS.Core
             set { m_LoggingEnabled = value; }
         }
 
-        protected static event System.Action Quitting;
-
-        [RuntimeInitializeOnLoadMethod]
-        private static void InitializeOnRuntimeLoad()
-        {
-            Application.quitting += OnQuitting;
-        }
-
-        private static void OnQuitting()
-        {
-            if (Quitting != null)
-                Quitting();
-        }
-
         private string FormatLogMessage(object message)
         {
             return "[SFPS]: " + message;
