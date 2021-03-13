@@ -75,6 +75,12 @@ namespace ProjectSFPS.Core.Input
                 return false;
             }
 
+            if (m_InputActions == null)
+            {
+                LogError("Cannot set InputActionMap [" + actionMapName + "] as active because no InputActions asset is assigned");
+                return false;
+            }
+
             // Try to find action map.
             InputActionMap actionMap = m_InputActions.FindActionMap(actionMapName);
 
@@ -143,6 +149,12 @@ namespace ProjectSFPS.Core.Input
             if (actionName == null)
             {
                 LogError("Cannot retrieve an InputAction when the provided action name is null");
+                return null;
+            }
+
+            if (m_ActiveActionMap == null)
+            {
+                LogError("Cannot retrieve InputAction [" + actionName + "] because there is no active action map");
                 return null;
             }
 

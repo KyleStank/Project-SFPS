@@ -27,7 +27,7 @@ namespace ProjectSFPS.Camera
         private SFPSUserInput m_UserInput = null;
         private InputAction m_LookInputAction = null;
 
-        private Vector2 m_CurrentLookInput = Vector2.zero;
+        private Vector2 m_CurrentInput = Vector2.zero;
 
         private void Awake()
         {
@@ -74,17 +74,19 @@ namespace ProjectSFPS.Camera
 
         private void Start()
         {
-            ConfigureInputActions();
-        }
-
-        private void ConfigureInputActions()
-        {
             // Look input action.
             m_LookInputAction = m_UserInput.GetAction(m_LookAction);
             if (m_LookInputAction == null)
             {
-                LogError("InputAction [" + m_LookAction + "] not found. User input will be ignored on [" + gameObject.name + "].");
+                LogError("InputAction [" + m_LookAction + "] not found. User input will be ignored on [" + name + "].");
             }
+        }
+
+        private void Update()
+        {
+            if (m_LookInputAction == null) return;
+
+            m_CurrentInput = m_LookInputAction.ReadValue<Vector2>();
         }
 
         private void LateUpdate()
@@ -96,9 +98,8 @@ namespace ProjectSFPS.Camera
             }
 
             // Update position and rotation.
-            Vector2 input = m_LookInputAction.ReadValue<Vector2>();
             m_Camera.Move();
-            m_Camera.Rotate(input.x, input.y);
+            m_Camera.Rotate(m_CurrentInput.x, m_CurrentInput.y);
         }
     }
 }

@@ -2,8 +2,18 @@ using UnityEngine;
 
 namespace ProjectSFPS.Core
 {
+    /// <summary>
+    /// Abstract MonoBehaviour that all Project SFPS components derive from.
+    /// </summary>
     public abstract class SFPSBehaviour : MonoBehaviour
     {
+         #if UNITY_EDITOR
+        [SerializeField]
+        private bool m_ShowBaseProps = false;
+        [SerializeField]
+        private bool m_ShowDerivedProps = false;
+        #endif
+
         [SerializeField]
         private bool m_LoggingEnabled = true;
         public bool LoggingEnabled
@@ -12,12 +22,19 @@ namespace ProjectSFPS.Core
             set { m_LoggingEnabled = value; }
         }
 
-        #if UNITY_EDITOR
-        [SerializeField]
-        private bool m_ShowBaseProps = false;
-        [SerializeField]
-        private bool m_ShowDerivedProps = false;
-        #endif
+        protected static event System.Action Quitting;
+
+        [RuntimeInitializeOnLoadMethod]
+        private static void InitializeOnRuntimeLoad()
+        {
+            Application.quitting += OnQuitting;
+        }
+
+        private static void OnQuitting()
+        {
+            if (Quitting != null)
+                Quitting();
+        }
 
         private string FormatLogMessage(object message)
         {
