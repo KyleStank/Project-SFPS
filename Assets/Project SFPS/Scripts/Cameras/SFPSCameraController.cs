@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+using ProjectSFPS.Core.Input;
 using ProjectSFPS.Characters;
-using ProjectSFPS.Input;
 
 namespace ProjectSFPS.Cameras
 {

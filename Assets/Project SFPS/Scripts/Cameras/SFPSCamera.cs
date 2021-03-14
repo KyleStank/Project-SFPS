@@ -1,6 +1,6 @@
 using UnityEngine;
 
-using ProjectSFPS.Variables;
+using ProjectSFPS.Core.Variables;
 
 namespace ProjectSFPS.Cameras
 {

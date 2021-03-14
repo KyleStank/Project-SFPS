@@ -3047,6 +3047,133 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Int.m_Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: f5fed11e5e7c3324891b2a09777bed29,
+        type: 2}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Bool.m_Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d20aa0064b85be45bd4ff75adcc2603,
+        type: 2}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Float.m_Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: d4322840cb3ab104daa788513f2b8e0e,
+        type: 2}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_String.m_Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: 42cada73d9d68954eb556bb1646e6c59,
+        type: 2}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector2.m_Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: dc3fa6adea2d8544a903ae6a875fe238,
+        type: 2}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector3.m_Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: cc6452b896f3bc747a69db361d19dc87,
+        type: 2}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Int.m_ConstantValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Bool.m_ConstantValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Float.m_ConstantValue
+      value: 43.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Int.m_UseConstantValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_String.m_ConstantValue
+      value: test
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Bool.m_UseConstantValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Float.m_UseConstantValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_NewSensitivity.m_Variable
+      value: 
+      objectReference: {fileID: 11400000, guid: dc3fa6adea2d8544a903ae6a875fe238,
+        type: 2}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_String.m_UseConstantValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector2.m_ConstantValue.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector2.m_ConstantValue.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector3.m_ConstantValue.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector3.m_ConstantValue.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector3.m_ConstantValue.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector2.m_UseConstantValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_Vector3.m_UseConstantValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_NewSensitivity.m_ConstantValue.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206330085234574271, guid: 3303d4fa24b126d4a84dd42da1bda267,
+        type: 3}
+      propertyPath: m_NewSensitivity.m_UseConstantValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3931504956338146722, guid: 3303d4fa24b126d4a84dd42da1bda267,
         type: 3}
       propertyPath: m_Name
@@ -3107,11 +3234,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4144369517074167483, guid: 3303d4fa24b126d4a84dd42da1bda267,
-        type: 3}
-      propertyPath: m_NewSensitivity
-      value: 
-      objectReference: {fileID: 11400000, guid: 872fe0faab7fc0c4ab7e166034f43c68,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3303d4fa24b126d4a84dd42da1bda267, type: 3}

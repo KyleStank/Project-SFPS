@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-using ProjectSFPS.Input;
+using ProjectSFPS.Core.Input;
 
 namespace ProjectSFPS.Characters
 {
