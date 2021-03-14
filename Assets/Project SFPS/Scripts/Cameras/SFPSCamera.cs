@@ -14,9 +14,9 @@ namespace ProjectSFPS.Cameras
         private SFPSVector2Reference m_Sensitivity = new Vector2(5.0f, 5.0f);
 
         [SerializeField]
-        private float m_TopClamp = -65.0f;
+        private SFPSFloatReference m_TopClamp = -65.0f;
         [SerializeField]
-        private float m_BottomClamp = 65.0f;
+        private SFPSFloatReference m_BottomClamp = 65.0f;
 
         private Camera m_Camera = null;
         private Transform m_Target = null;
