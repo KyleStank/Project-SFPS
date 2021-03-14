@@ -1,7 +1,5 @@
 using UnityEngine;
 
-using ProjectSFPS.Core;
-
 namespace ProjectSFPS.Utility
 {
     // TODO: Fix issue where if Singleton is accessed in a OnDestroy(), sometimes it will be created, sometimes it won't be.
