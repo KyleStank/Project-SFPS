@@ -1,5 +1,7 @@
 using UnityEngine;
 
+using ProjectSFPS.Core.Variables;
+
 namespace ProjectSFPS
 {
     /// <summary>
@@ -7,15 +9,15 @@ namespace ProjectSFPS
     /// </summary>
     public abstract class SFPSBehaviour : MonoBehaviour
     {
-         #if UNITY_EDITOR
+        #if UNITY_EDITOR
         [SerializeField]
-        private bool m_ShowBaseProps = false;
+        private SFPSBoolReference m_ShowBaseProps = false;
         [SerializeField]
-        private bool m_ShowDerivedProps = false;
+        private SFPSBoolReference m_ShowDerivedProps = false;
         #endif
 
         [SerializeField]
-        private bool m_LoggingEnabled = true;
+        private SFPSBoolReference m_LoggingEnabled = true;
         public bool LoggingEnabled
         {
             get { return m_LoggingEnabled; }

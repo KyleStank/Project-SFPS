@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using ProjectSFPS.Core.Input;
+using ProjectSFPS.Core.Variables;
 
 namespace ProjectSFPS.Characters
 {
@@ -10,9 +11,9 @@ namespace ProjectSFPS.Characters
     {
         [Header("Input Actions")]
         [SerializeField]
-        private string m_MoveAction = "Move";
+        private SFPSStringReference m_MoveAction = "Move";
         [SerializeField]
-        private string m_LookAction = "Look";
+        private SFPSStringReference m_LookAction = "Look";
 
         private InputAction m_MoveInputAction = null;
         private InputAction m_LookInputAction = null;

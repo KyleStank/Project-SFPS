@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 using ProjectSFPS.Core.Input;
+using ProjectSFPS.Core.Variables;
 using ProjectSFPS.Characters;
 
 namespace ProjectSFPS.Cameras
@@ -13,15 +14,15 @@ namespace ProjectSFPS.Cameras
         [SerializeField]
         private SFPSCamera m_Camera = null;
         [SerializeField]
-        private string m_CameraTag = "MainCamera";
+        private SFPSStringReference m_CameraTag = "MainCamera";
         [SerializeField]
         private SFPSCharacter m_CharacterTarget = null;
         [SerializeField]
-        private string m_CharacterTag = "Player";
+        private SFPSStringReference m_CharacterTag = "Player";
 
         [Header("Input Actions")]
         [SerializeField]
-        private string m_LookAction = "Look";
+        private SFPSStringReference m_LookAction = "Look";
 
         private SFPSUserInput m_UserInput = null;
         private InputAction m_LookInputAction = null;

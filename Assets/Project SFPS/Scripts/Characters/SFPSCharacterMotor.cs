@@ -1,14 +1,16 @@
 using UnityEngine;
 
+using ProjectSFPS.Core.Variables;
+
 namespace ProjectSFPS.Characters
 {
     [RequireComponent(typeof(Rigidbody))]
     public class SFPSCharacterMotor : SFPSBehaviour
     {
         [SerializeField]
-        private float _accelerationRate = 10.0f;
+        private SFPSFloatReference _accelerationRate = 10.0f;
         [SerializeField]
-        private float m_TurnSensitivity = 5.0f;
+        private SFPSVector2Reference m_TurnSensitivity = new Vector2(5.0f, 5.0f);
 
         public float AccelerationRate
         {
@@ -54,7 +56,7 @@ namespace ProjectSFPS.Characters
             Vector3 rot = transform.rotation.eulerAngles;
             rot = new Vector3(
                 0.0f,
-                rot.y + (horizontal * m_TurnSensitivity),
+                rot.y + (horizontal * m_TurnSensitivity.Value.x),
                 0.0f
             );
 

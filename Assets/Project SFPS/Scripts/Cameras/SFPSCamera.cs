@@ -9,9 +9,9 @@ namespace ProjectSFPS.Cameras
     {
         [Header("Camera Settings")]
         [SerializeField]
-        private Vector3 m_Offset = Vector3.zero;
+        private SFPSVector3Reference m_Offset = Vector3.zero;
         [SerializeField]
-        private Vector2 m_Sensitivity = new Vector2(5.0f, 5.0f);
+        private SFPSVector2Reference m_Sensitivity = new Vector2(5.0f, 5.0f);
 
         [SerializeField]
         private float m_TopClamp = -65.0f;
@@ -56,8 +56,8 @@ namespace ProjectSFPS.Cameras
                 Vector3 eulerAngles = rot.eulerAngles;
 
                 // Calculate rotation.
-                float xRot = eulerAngles.x - vertical * m_Sensitivity.y;
-                float yRot = eulerAngles.y + horizontal * m_Sensitivity.x;
+                float xRot = eulerAngles.x - vertical * m_Sensitivity.Value.y;
+                float yRot = eulerAngles.y + horizontal * m_Sensitivity.Value.x;
                 rot = Quaternion.Euler(
                     new Vector3(
                         Mathf.Clamp(

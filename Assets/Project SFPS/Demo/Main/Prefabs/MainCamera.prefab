@@ -45,11 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705cb7881bec0dc488d553bc98edcaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowBaseProps: 0
-  m_ShowDerivedProps: 0
-  m_LoggingEnabled: 1
+  m_ShowBaseProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_ShowDerivedProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_LoggingEnabled:
+    m_UseConstantValue: 1
+    m_ConstantValue: 1
+    m_Variable: {fileID: 0}
   m_InputSettings: {fileID: 11400000, guid: b8279eb7ffbc8b1488f09a311b3b0393, type: 2}
-  m_DefaultActionMap: Player
+  m_DefaultActionMap:
+    m_UseConstantValue: 1
+    m_ConstantValue: Player
+    m_Variable: {fileID: 0}
 --- !u!114 &3676728460350411891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,14 +74,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b999f865e0ae8f4b91022d54d0a252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowBaseProps: 0
-  m_ShowDerivedProps: 0
-  m_LoggingEnabled: 1
+  m_ShowBaseProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_ShowDerivedProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_LoggingEnabled:
+    m_UseConstantValue: 1
+    m_ConstantValue: 1
+    m_Variable: {fileID: 0}
   m_Camera: {fileID: 0}
-  m_CameraTag: MainCamera
+  m_CameraTag:
+    m_UseConstantValue: 1
+    m_ConstantValue: MainCamera
+    m_Variable: {fileID: 0}
   m_CharacterTarget: {fileID: 0}
-  m_CharacterTag: Player
-  m_LookAction: Look
+  m_CharacterTag:
+    m_UseConstantValue: 1
+    m_ConstantValue: Player
+    m_Variable: {fileID: 0}
+  m_LookAction:
+    m_UseConstantValue: 1
+    m_ConstantValue: Look
+    m_Variable: {fileID: 0}
 --- !u!1 &3931504956564986980
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +111,7 @@ GameObject:
   - component: {fileID: 3931504956564986981}
   - component: {fileID: 3931504956564986979}
   - component: {fileID: 3931504956564986978}
-  - component: {fileID: 1206330085234574271}
+  - component: {fileID: 2118191694}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -154,7 +184,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3931504956564986980}
   m_Enabled: 1
---- !u!114 &1206330085234574271
+--- !u!114 &2118191694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,14 +196,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce316e1ac6f265c458acf8c7f722e933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowBaseProps: 0
-  m_ShowDerivedProps: 0
-  m_LoggingEnabled: 1
-  m_Offset: {x: 0, y: 0, z: 0}
-  m_Sensitivity: {x: 5, y: 5}
-  m_NewSensitivity:
-    m_UseConstantValue: 0
-    m_ConstantValue: {x: 0, y: 0}
+  m_ShowBaseProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
     m_Variable: {fileID: 0}
+  m_ShowDerivedProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_LoggingEnabled:
+    m_UseConstantValue: 1
+    m_ConstantValue: 1
+    m_Variable: {fileID: 0}
+  m_Offset:
+    m_UseConstantValue: 1
+    m_ConstantValue: {x: 0, y: 0.5, z: 0.4}
+    m_Variable: {fileID: 0}
+  m_Sensitivity:
+    m_UseConstantValue: 0
+    m_ConstantValue: {x: 5, y: 5}
+    m_Variable: {fileID: 11400000, guid: dc3fa6adea2d8544a903ae6a875fe238, type: 2}
   m_TopClamp: -65
   m_BottomClamp: 65

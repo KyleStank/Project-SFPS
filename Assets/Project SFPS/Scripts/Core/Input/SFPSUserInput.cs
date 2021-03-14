@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+using ProjectSFPS.Core.Variables;
+
 namespace ProjectSFPS.Core.Input
 {
     public class SFPSUserInput : SFPSBehaviour
@@ -11,7 +13,7 @@ namespace ProjectSFPS.Core.Input
 
         [Header("Configuration")]
         [SerializeField]
-        private string m_DefaultActionMap = "Player";
+        private SFPSStringReference m_DefaultActionMap = "Player";
 
         private InputActionMap m_ActiveActionMap = null;
         public InputActionMap ActiveActionMap

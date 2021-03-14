@@ -44,19 +44,17 @@ namespace ProjectSFPS.Editor.Drawers
             m_ConstantValueProp = m_Prop.FindPropertyRelative(PROPNAME_CONSTANTVALUE);
             m_VariableProp = m_Prop.FindPropertyRelative(PROPNAME_VARIABLE);
 
-            // Don't make child fields be indented.
+            // Draw prefix before indentation is reset, to account for drawing inside an indent GUI, i.e. a foldout.
+            Rect fieldRect = EditorGUI.PrefixLabel(position, label); // Returns the rect containing space for the control after the prefix.
             int indent = EditorGUI.indentLevel;
             EditorGUI.indentLevel = 0;
 
-            Rect fieldRect = EditorGUI.PrefixLabel(position, label); // Returns the rect containing space for the control after the prefix.
+            // Get value rect and draw value field.
             Rect valueRect = DrawField(position, fieldRect); // Returns the combined rect of the value and the popup button.
-
-            // Draw constant or reference field.
             EditorGUI.PropertyField(valueRect, m_UseConstantValueProp.boolValue ? m_ConstantValueProp : m_VariableProp, GUIContent.none);
 
-            // Set indent back to what it was.
+            // Reset indent to original and apply changes.
             EditorGUI.indentLevel = indent;
-
             m_Prop.serializedObject.ApplyModifiedProperties();
         }
 

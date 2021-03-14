@@ -241,8 +241,14 @@ MonoBehaviour:
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
   m_LoggingEnabled: 1
-  m_MoveAction: Move
-  m_LookAction: Look
+  m_MoveAction:
+    m_UseConstantValue: 1
+    m_ConstantValue: Move
+    m_Variable: {fileID: 0}
+  m_LookAction:
+    m_UseConstantValue: 1
+    m_ConstantValue: Look
+    m_Variable: {fileID: 0}
 --- !u!114 &8412452742463804680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,5 +264,11 @@ MonoBehaviour:
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
   m_LoggingEnabled: 1
-  _accelerationRate: 10
-  m_TurnSensitivity: 5
+  _accelerationRate:
+    m_UseConstantValue: 1
+    m_ConstantValue: 10
+    m_Variable: {fileID: 0}
+  m_TurnSensitivity:
+    m_UseConstantValue: 0
+    m_ConstantValue: {x: 5, y: 5}
+    m_Variable: {fileID: 11400000, guid: dc3fa6adea2d8544a903ae6a875fe238, type: 2}
