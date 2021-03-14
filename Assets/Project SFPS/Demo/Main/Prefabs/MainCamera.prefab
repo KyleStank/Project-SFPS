@@ -45,11 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705cb7881bec0dc488d553bc98edcaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoggingEnabled: 1
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
-  m_InputActions: {fileID: -944628639613478452, guid: 2b34e466914d40940931bc50c07ff869,
-    type: 3}
+  m_LoggingEnabled: 1
+  m_InputSettings: {fileID: 11400000, guid: b8279eb7ffbc8b1488f09a311b3b0393, type: 2}
   m_DefaultActionMap: Player
 --- !u!114 &3676728460350411891
 MonoBehaviour:
@@ -63,9 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b999f865e0ae8f4b91022d54d0a252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoggingEnabled: 1
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
+  m_LoggingEnabled: 1
   m_Camera: {fileID: 0}
   m_CameraTag: MainCamera
   m_CharacterTarget: {fileID: 0}
@@ -167,9 +166,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce316e1ac6f265c458acf8c7f722e933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoggingEnabled: 1
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
+  m_LoggingEnabled: 1
   m_Offset: {x: 0, y: 0.5, z: 0.4}
   m_Sensitivity: {x: 5, y: 5}
   m_TopClamp: -65

@@ -4,100 +4,83 @@ using UnityEditor.AnimatedValues;
 namespace ProjectSFPS.Editor
 {
     [CustomEditor(typeof(SFPSBehaviour), true)]
-    public class SFPSBehaviourEditor : UnityEditor.Editor
+    public class SFPSBehaviourEditor : SFPSBaseEditor<SFPSBehaviour>
     {
-        private const string PROPNAME_SCRIPT = "m_Script";
         private const string PROPNAME_LOGGINGENABLED = "m_LoggingEnabled";
         private const string PROPNAME_SHOWBASEPROPS = "m_ShowBaseProps";
         private const string PROPNAME_SHOWDERIVEDPROPS = "m_ShowDerivedProps";
 
-        private readonly string[] _excludedDefaultProperties = new string[]
+        private SerializedProperty m_PropLoggingEnabled;
+        private SerializedProperty m_PropShowBaseProps;
+        private SerializedProperty m_PropShowDerivedProps;
+
+        private bool m_HasDerivedProperties = false;
+
+        private AnimBool m_BasePropsAnim;
+        private AnimBool m_DerivedPropsAnim;
+
+        private string m_TypeName = "Component";
+
+        protected override void Initialize()
         {
-            PROPNAME_SCRIPT,
-            PROPNAME_LOGGINGENABLED,
-            PROPNAME_SHOWBASEPROPS,
-            PROPNAME_SHOWDERIVEDPROPS
-        };
+            // Add to excluded properties.
+            ExcludedDefaultProps.Add(PROPNAME_LOGGINGENABLED);
+            ExcludedDefaultProps.Add(PROPNAME_SHOWBASEPROPS);
+            ExcludedDefaultProps.Add(PROPNAME_SHOWDERIVEDPROPS);
 
-        private SerializedProperty _propScript;
-        private SerializedProperty _propLoggingEnabled;
-        private SerializedProperty _propShowBaseProps;
-        private SerializedProperty _propShowDerivedProps;
-
-        private bool _hasDerivedProperties = false;
-
-        private AnimBool _basePropsAnim;
-        private AnimBool _derivedPropsAnim;
-
-        private string _typeName = "Component";
-
-        private void Awake()
-        {
             // Grab serialized properties.
-            _propScript = serializedObject.FindProperty(PROPNAME_SCRIPT);
-            _propLoggingEnabled = serializedObject.FindProperty(PROPNAME_LOGGINGENABLED);
-            _propShowBaseProps = serializedObject.FindProperty(PROPNAME_SHOWBASEPROPS);
-            _propShowDerivedProps = serializedObject.FindProperty(PROPNAME_SHOWDERIVEDPROPS);
+            m_PropLoggingEnabled = serializedObject.FindProperty(PROPNAME_LOGGINGENABLED);
+            m_PropShowBaseProps = serializedObject.FindProperty(PROPNAME_SHOWBASEPROPS);
+            m_PropShowDerivedProps = serializedObject.FindProperty(PROPNAME_SHOWDERIVEDPROPS);
 
             // Check if there are any derived propertfdies.
             // NOTE: Always use the last serialized property in the order they are declared in SFPSBehaviour.
-            _hasDerivedProperties = _propShowDerivedProps.Copy().CountRemaining() > 0;
+            m_HasDerivedProperties = m_PropShowDerivedProps.Copy().CountRemaining() > 0;
 
             // Setup animation values.
-            _basePropsAnim = new AnimBool(_propShowBaseProps.isExpanded, Repaint);
-            _derivedPropsAnim = new AnimBool(_propShowDerivedProps.isExpanded, Repaint);
+            m_BasePropsAnim = new AnimBool(m_PropShowBaseProps.isExpanded, Repaint);
+            m_DerivedPropsAnim = new AnimBool(m_PropShowDerivedProps.isExpanded, Repaint);
 
-            _typeName = target.GetType().Name;
+            m_TypeName = Target.GetType().Name;
         }
 
         private void OnDestroy()
         {
             // Clean up event listeners.
-            _basePropsAnim.valueChanged.RemoveAllListeners();
-            _derivedPropsAnim.valueChanged.RemoveAllListeners();
+            m_BasePropsAnim.valueChanged.RemoveAllListeners();
+            m_DerivedPropsAnim.valueChanged.RemoveAllListeners();
         }
 
-        public override void OnInspectorGUI()
+        protected override void DrawInspector()
         {
-            serializedObject.Update();
-
-            // Script property.
-            EditorGUILayout.PropertyField(_propScript);
-
-            // Draw inheritied properties.
-            EditorGUILayout.Space();
-            DrawInheritedProperties();
-
-            // Draw derived properties, if there are any.
-            if (_hasDerivedProperties)
+            DrawBaseProperties();
+            if (m_HasDerivedProperties)
             {
                 EditorGUILayout.Space();
                 DrawDerivedProperties();
             }
-
-            serializedObject.ApplyModifiedProperties();
         }
 
         /// <summary>
-        /// Draws the inherited properties.
+        /// Draws the base properties of SFPSBehaviour.
         /// </summary>
-        private void DrawInheritedProperties()
+        private void DrawBaseProperties()
         {
             // Create foldout.
-            _propShowBaseProps.isExpanded = EditorGUILayout.BeginFoldoutHeaderGroup(
-                _propShowBaseProps.isExpanded,
+            m_PropShowBaseProps.isExpanded = EditorGUILayout.BeginFoldoutHeaderGroup(
+                m_PropShowBaseProps.isExpanded,
                 "SFPSBehaviour Settings",
                 EditorStyles.foldoutHeader
             );
-            _basePropsAnim.target = _propShowBaseProps.isExpanded;
+            m_BasePropsAnim.target = m_PropShowBaseProps.isExpanded;
 
             // Fade foldout content in/out.
-            if (EditorGUILayout.BeginFadeGroup(_basePropsAnim.faded))
+            if (EditorGUILayout.BeginFadeGroup(m_BasePropsAnim.faded))
             {
                 EditorGUI.indentLevel++;
 
                 // Logging property.
-                EditorGUILayout.PropertyField(_propLoggingEnabled);
+                EditorGUILayout.PropertyField(m_PropLoggingEnabled);
 
                 EditorGUI.indentLevel--;
             }
@@ -112,19 +95,19 @@ namespace ProjectSFPS.Editor
         private void DrawDerivedProperties()
         {
             // Create foldout.
-            _propShowDerivedProps.isExpanded = EditorGUILayout.BeginFoldoutHeaderGroup(
-                _propShowDerivedProps.isExpanded,
-                _typeName + " Settings",
+            m_PropShowDerivedProps.isExpanded = EditorGUILayout.BeginFoldoutHeaderGroup(
+                m_PropShowDerivedProps.isExpanded,
+                m_TypeName + " Settings",
                 EditorStyles.foldoutHeader
             );
-            _derivedPropsAnim.target = _propShowDerivedProps.isExpanded;
+            m_DerivedPropsAnim.target = m_PropShowDerivedProps.isExpanded;
 
             // Fade foldout content in/out.
-            if (EditorGUILayout.BeginFadeGroup(_derivedPropsAnim.faded))
+            if (EditorGUILayout.BeginFadeGroup(m_DerivedPropsAnim.faded))
             {
                 EditorGUI.indentLevel++;
 
-                DrawPropertiesExcluding(serializedObject, _excludedDefaultProperties);
+                DrawDefaultProperties();
 
                 EditorGUI.indentLevel--;
             }

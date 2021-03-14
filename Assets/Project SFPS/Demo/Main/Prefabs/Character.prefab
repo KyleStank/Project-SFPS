@@ -221,11 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705cb7881bec0dc488d553bc98edcaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoggingEnabled: 1
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
-  m_InputActions: {fileID: -944628639613478452, guid: 2b34e466914d40940931bc50c07ff869,
-    type: 3}
+  m_LoggingEnabled: 1
+  m_InputSettings: {fileID: 11400000, guid: b8279eb7ffbc8b1488f09a311b3b0393, type: 2}
   m_DefaultActionMap: Player
 --- !u!114 &1032906307945037068
 MonoBehaviour:
@@ -239,9 +238,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718540d7af559c24d8a2a2007a92618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoggingEnabled: 1
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
+  m_LoggingEnabled: 1
   m_MoveAction: Move
   m_LookAction: Look
 --- !u!114 &8412452742463804680
@@ -256,7 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8439a325b49a19a44884501ba93e84d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LoggingEnabled: 1
   m_ShowBaseProps: 0
   m_ShowDerivedProps: 0
+  m_LoggingEnabled: 1
   _accelerationRate: 10
+  m_TurnSensitivity: 5

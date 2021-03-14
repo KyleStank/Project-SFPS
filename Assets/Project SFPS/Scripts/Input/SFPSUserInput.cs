@@ -3,22 +3,11 @@ using UnityEngine.InputSystem;
 
 namespace ProjectSFPS.Input
 {
-    internal static class BindingPaths
-    {
-        public const string POINTER_DELTA = "<Pointer>/delta";
-    }
-
-    internal static class SFPSProcessorNames
-    {
-        public const string POINTER_DELTA_NORMALIZER = "SFPSPointerDeltaNormalizer";
-        public const string SCALED_DELTA_TIME = "SFPSScaledDeltaTime";
-    }
-
     public class SFPSUserInput : SFPSBehaviour
     {
         [Header("References")]
         [SerializeField]
-        private InputActionAsset m_InputActions = null;
+        private SFPSInputSettings m_InputSettings = null;
 
         [Header("Configuration")]
         [SerializeField]
@@ -48,14 +37,20 @@ namespace ProjectSFPS.Input
                 return false;
             }
 
-            if (m_InputActions == null)
+            if (m_InputSettings == null)
             {
-                LogError("Cannot set InputActionMap [" + actionMapName + "] as active because no InputActions asset is assigned");
+                LogError("Cannot set InputActionMap [" + actionMapName + "] as active because SFPSInputSettings is null");
+                return false;
+            }
+
+            if (m_InputSettings.InputActionAsset == null)
+            {
+                LogError("Cannot set InputActionMap [" + actionMapName + "] as active because no InputActionAsset is assigned");
                 return false;
             }
 
             // Try to find action map.
-            InputActionMap actionMap = m_InputActions.FindActionMap(actionMapName);
+            InputActionMap actionMap = m_InputSettings.InputActionAsset.FindActionMap(actionMapName);
 
             bool isValid = actionMap != null;
             if (!isValid)
@@ -69,45 +64,6 @@ namespace ProjectSFPS.Input
                 // Enable action map and set as active.
                 actionMap.Enable();
                 m_ActiveActionMap = actionMap;
-
-                // TODO: Finish this later.
-                // // Look through actions and setup.
-                // var actions = actionMap.actions;
-                // for (int i = 0; i < actions.Count; i++)
-                // {
-                //     var action = actions[i];
-                //     var bindings = action.bindings;
-                //     for (int j = 0; j < bindings.Count; j++)
-                //     {
-                //         // Loop through each binding and add required processors as needed.
-                //         var binding = bindings[j];
-                //         switch (binding.path)
-                //         {
-                //             case BindingPaths.POINTER_DELTA:
-                //                 if (!binding.processors.Contains(SFPSProcessorNames.SCALED_DELTA_TIME))
-                //                 {
-                //                     binding.processors += ',' + SFPSProcessorNames.SCALED_DELTA_TIME + ',';
-                //                 }
-                //                 break;
-
-                //             default:
-                //                 break;
-                //         }
-
-                //         // Apply modified bindings.
-                //         action.ApplyBindingOverride(
-                //             j,
-                //             new InputBinding(
-                //                 binding.path,
-                //                 binding.action,
-                //                 binding.groups,
-                //                 binding.processors,
-                //                 binding.interactions,
-                //                 binding.name
-                //             )
-                //         );
-                //     }
-                // }
             }
 
             return isValid;

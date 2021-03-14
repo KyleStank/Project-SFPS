@@ -3,10 +3,12 @@ using UnityEngine;
 namespace ProjectSFPS.Variables
 {
     /// <summary>
-    /// Abstract class that defines a simple ScriptableObject that acts as a wrapper for a value.
+    /// Serializable class that simply wraps any value. Contains an initial and runtime value.
+    /// For the serialization to work, the type must also be serializable by Unity.
     /// </summary>
-    /// <typeparam name="T">Value type that ScriptableObject will wrap.</typeparam>
-    public abstract class SFPSVariable<T> : ScriptableObject, ISerializationCallbackReceiver
+    /// <typeparam name="T">Value type that SFPSVariable will wrap.</typeparam>
+    [System.Serializable]
+    public struct SFPSVariable<T> : ISerializationCallbackReceiver
     {
         [SerializeField]
         private T m_InitialValue;

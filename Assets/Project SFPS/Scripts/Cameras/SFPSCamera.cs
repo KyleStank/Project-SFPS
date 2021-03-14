@@ -1,8 +1,10 @@
 using UnityEngine;
 
+using ProjectSFPS.Variables;
+
 namespace ProjectSFPS.Cameras
 {
-    [RequireComponent(typeof(UnityEngine.Camera))]
+    [RequireComponent(typeof(Camera))]
     public class SFPSCamera : SFPSBehaviour
     {
         [Header("Camera Settings")]
@@ -16,7 +18,7 @@ namespace ProjectSFPS.Cameras
         [SerializeField]
         private float m_BottomClamp = 65.0f;
 
-        private UnityEngine.Camera m_Camera = null;
+        private Camera m_Camera = null;
         private Transform m_Target = null;
         private Quaternion m_OriginalRotation = Quaternion.identity;
 
@@ -24,7 +26,7 @@ namespace ProjectSFPS.Cameras
         {
             Log("Initialize Camera");
 
-            m_Camera = GetComponent<UnityEngine.Camera>();
+            m_Camera = GetComponent<Camera>();
 
             m_OriginalRotation = transform.rotation;
         }
@@ -47,9 +49,8 @@ namespace ProjectSFPS.Cameras
 
         public void Rotate(float horizontal, float vertical)
         {
-            Quaternion rot = transform.rotation;
-
             // Detect input.
+            Quaternion rot = transform.rotation;
             if (horizontal != 0 || vertical != 0)
             {
                 Vector3 eulerAngles = rot.eulerAngles;
