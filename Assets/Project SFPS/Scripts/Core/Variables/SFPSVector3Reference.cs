@@ -10,5 +10,8 @@ namespace ProjectSFPS.Core.Variables
         {
             return new SFPSVector3Reference(value);
         }
+
+        public static SFPSVector3Reference operator +(SFPSVector3Reference first, SFPSVector3Reference second) => first.Value + second.Value;
+        public static SFPSVector3Reference operator -(SFPSVector3Reference first, SFPSVector3Reference second) => first.Value - second.Value;
     }
 }

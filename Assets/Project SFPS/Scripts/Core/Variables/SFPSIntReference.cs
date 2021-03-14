@@ -10,5 +10,10 @@ namespace ProjectSFPS.Core.Variables
         {
             return new SFPSIntReference(value);
         }
+
+        public static SFPSIntReference operator +(SFPSIntReference first, SFPSIntReference second) => first.Value + second.Value;
+        public static SFPSIntReference operator -(SFPSIntReference first, SFPSIntReference second) => first.Value - second.Value;
+        public static SFPSIntReference operator *(SFPSIntReference first, SFPSIntReference second) => first.Value * second.Value;
+        public static SFPSIntReference operator /(SFPSIntReference first, SFPSIntReference second) => first.Value / second.Value;
     }
 }

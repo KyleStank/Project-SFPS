@@ -10,5 +10,7 @@ namespace ProjectSFPS.Core.Variables
         {
             return new SFPSStringReference(value);
         }
+
+        public static SFPSStringReference operator +(SFPSStringReference first, SFPSStringReference second) => first.Value + second.Value;
     }
 }
