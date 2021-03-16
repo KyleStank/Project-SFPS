@@ -221,11 +221,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705cb7881bec0dc488d553bc98edcaf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowBaseProps: 0
-  m_ShowDerivedProps: 0
-  m_LoggingEnabled: 1
+  m_ShowBaseProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_ShowDerivedProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_LoggingEnabled:
+    m_UseConstantValue: 1
+    m_ConstantValue: 1
+    m_Variable: {fileID: 0}
   m_InputSettings: {fileID: 11400000, guid: b8279eb7ffbc8b1488f09a311b3b0393, type: 2}
-  m_DefaultActionMap: Player
+  m_DefaultActionMap:
+    m_UseConstantValue: 1
+    m_ConstantValue: Player
+    m_Variable: {fileID: 0}
 --- !u!114 &1032906307945037068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,9 +250,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 718540d7af559c24d8a2a2007a92618c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowBaseProps: 0
-  m_ShowDerivedProps: 0
-  m_LoggingEnabled: 1
+  m_ShowBaseProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_ShowDerivedProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_LoggingEnabled:
+    m_UseConstantValue: 1
+    m_ConstantValue: 1
+    m_Variable: {fileID: 0}
   m_MoveAction:
     m_UseConstantValue: 1
     m_ConstantValue: Move
@@ -261,9 +282,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8439a325b49a19a44884501ba93e84d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowBaseProps: 0
-  m_ShowDerivedProps: 0
-  m_LoggingEnabled: 1
+  m_ShowBaseProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_ShowDerivedProps:
+    m_UseConstantValue: 1
+    m_ConstantValue: 0
+    m_Variable: {fileID: 0}
+  m_LoggingEnabled:
+    m_UseConstantValue: 1
+    m_ConstantValue: 1
+    m_Variable: {fileID: 0}
   _accelerationRate:
     m_UseConstantValue: 1
     m_ConstantValue: 10

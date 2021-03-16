@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 // Source: http://wiki.unity3d.com/index.php/Show_Built_In_Resources?_ga=2.124928906.1647853980.1615657882-471819071.1612232906
 // Soley used for extending the editor and finding built in styles.
-public class SFPSBuiltInResourcesWindow : EditorWindow
+public sealed class SFPSBuiltInResourcesWindow : EditorWindow
 {
     [MenuItem("Window/SFPS/Development Only/Built In Editor Styles")]
     public static void ShowWindow()

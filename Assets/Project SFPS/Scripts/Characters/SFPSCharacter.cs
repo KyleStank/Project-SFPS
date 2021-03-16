@@ -40,29 +40,21 @@ namespace ProjectSFPS.Characters
             // Move input action.
             m_MoveInputAction = m_UserInput.GetAction(m_MoveAction);
             if (m_MoveInputAction == null)
-            {
                 LogError("InputAction [" + m_MoveAction + "] not found. Movement input will be ignored on [" + name + "].");
-            }
 
             // Look input action.
             m_LookInputAction = m_UserInput.GetAction(m_LookAction);
             if (m_LookInputAction == null)
-            {
                 LogError("InputAction [" + m_LookAction + "] not found. Rotation input will be ignored on [" + name + "].");
-            }
         }
 
         private void ReadInput()
         {
             if (m_LookInputAction != null)
-            {
                 m_CurrentLookInput = m_LookInputAction.ReadValue<Vector2>();
-            }
 
             if (m_MoveInputAction != null)
-            {
                 m_CurrentMoveInput = m_MoveInputAction.ReadValue<Vector2>();
-            }
         }
 
         private void Update()

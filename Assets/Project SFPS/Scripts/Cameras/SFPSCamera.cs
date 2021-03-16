@@ -1,5 +1,6 @@
 using UnityEngine;
 
+using ProjectSFPS.Core.EventSystem;
 using ProjectSFPS.Core.Variables;
 
 namespace ProjectSFPS.Cameras
@@ -29,6 +30,21 @@ namespace ProjectSFPS.Cameras
             m_Camera = GetComponent<Camera>();
 
             m_OriginalRotation = transform.rotation;
+        }
+
+        private void OnEnable()
+        {
+            EventSystem.Subscribe<Vector3>("OnCharacterMove", OnCharacterMove);
+        }
+
+        private void OnDisable()
+        {
+            EventSystem.Unsubscribe<Vector3>("OnCharacterMove", OnCharacterMove);
+        }
+
+        private void OnCharacterMove(Vector3 velocity)
+        {
+            Debug.Log("Vel: " + velocity);
         }
 
         public void SetTarget(Transform target)

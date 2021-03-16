@@ -22,7 +22,6 @@ namespace ProjectSFPS.Characters
 
         private void Awake()
         {
-            Application.targetFrameRate = 60;
             Log("Initialize Character Motor");
 
             _rigidbody = GetComponent<Rigidbody>();

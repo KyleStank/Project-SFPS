@@ -77,9 +77,7 @@ namespace ProjectSFPS.Cameras
             // Look input action.
             m_LookInputAction = m_UserInput.GetAction(m_LookAction);
             if (m_LookInputAction == null)
-            {
                 LogError("InputAction [" + m_LookAction + "] not found. User input will be ignored on [" + name + "].");
-            }
         }
 
         private void Update()
